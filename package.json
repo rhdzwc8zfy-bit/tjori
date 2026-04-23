@@ -1,0 +1,9 @@
+{
+  "name": "tw-tajwri-altib",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Tajwri Altib luxury oud boutique starter theme for Salla Twilight",
+  "scripts": {
+    "preview": "salla theme preview"
+  }
+}

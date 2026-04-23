@@ -1,0 +1,760 @@
+:root {
+  --color-ink: #130d09;
+  --color-coffee: #2a1a12;
+  --color-olive: #3f4a2b;
+  --color-navy: #1d3557;
+  --color-gold: #c8a46a;
+  --color-gold-soft: #e2c58b;
+  --color-cream: #f1e7d6;
+  --color-cream-strong: #fffaf2;
+  --color-line: rgba(200, 164, 106, 0.22);
+  --color-shadow: rgba(10, 6, 4, 0.45);
+  --font-display: "Aref Ruqaa", "Noto Naskh Arabic", "Georgia", serif;
+  --font-body: "IBM Plex Sans Arabic", "Segoe UI", sans-serif;
+  --container: min(1180px, calc(100vw - 2rem));
+  --radius-xl: 28px;
+  --radius-lg: 20px;
+  --radius-md: 14px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  color: var(--color-cream);
+  background:
+    radial-gradient(circle at top right, rgba(200, 164, 106, 0.12), transparent 28%),
+    linear-gradient(180deg, #110b08 0%, #1a120d 30%, #efe5d7 30%, #efe5d7 100%);
+  font-family: var(--font-body);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+.container {
+  width: var(--container);
+  margin: 0 auto;
+}
+
+.announcement-bar {
+  border-bottom: 1px solid rgba(200, 164, 106, 0.18);
+  background: linear-gradient(90deg, #0f2413 0%, #1a2a1d 50%, #0f2413 100%);
+  color: var(--color-gold-soft);
+  font-size: 0.92rem;
+}
+
+.announcement-bar__inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  min-height: 42px;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  backdrop-filter: blur(16px);
+  background: rgba(12, 7, 5, 0.86);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.site-header.is-scrolled {
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.18);
+}
+
+.site-header__inner {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 1.5rem;
+  min-height: 92px;
+}
+
+.site-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.9rem;
+}
+
+.site-brand__logo {
+  width: 62px;
+  height: 62px;
+  object-fit: contain;
+}
+
+.site-brand__text strong {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.7rem;
+  font-weight: 400;
+  color: var(--color-gold-soft);
+}
+
+.site-brand__text span {
+  color: rgba(241, 231, 214, 0.82);
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.site-nav {
+  display: flex;
+  justify-content: center;
+  gap: 1.6rem;
+  flex-wrap: wrap;
+}
+
+.site-nav a {
+  position: relative;
+  padding: 0.4rem 0;
+  color: rgba(241, 231, 214, 0.88);
+  transition: color 180ms ease;
+}
+
+.site-nav a::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: -0.1rem;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--color-gold), transparent);
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 180ms ease;
+}
+
+.site-nav a:hover,
+.site-nav a:focus-visible {
+  color: var(--color-gold-soft);
+}
+
+.site-nav a:hover::after,
+.site-nav a:focus-visible::after {
+  transform: scaleX(1);
+}
+
+.site-header__actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.icon-link,
+.menu-toggle {
+  display: inline-grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 999px;
+  border: 1px solid rgba(200, 164, 106, 0.28);
+  color: var(--color-cream);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.menu-toggle {
+  display: none;
+}
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding: 3.25rem 0 2.2rem;
+  color: var(--color-cream);
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(10, 6, 4, 0.9) 0%, rgba(10, 6, 4, 0.62) 45%, rgba(10, 6, 4, 0.2) 100%),
+    url("../images/tajwri_altib_hero_banner.png") center/cover no-repeat;
+  z-index: -2;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0;
+  height: 140px;
+  background: linear-gradient(180deg, rgba(17, 11, 8, 0), rgba(17, 11, 8, 0.9));
+  z-index: -1;
+}
+
+.hero__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(320px, 0.9fr);
+  gap: 2rem;
+  align-items: center;
+  min-height: 620px;
+}
+
+.hero__content {
+  max-width: 520px;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0.8rem;
+  border: 1px solid rgba(200, 164, 106, 0.28);
+  border-radius: 999px;
+  color: var(--color-gold-soft);
+  background: rgba(20, 12, 9, 0.45);
+  font-size: 0.92rem;
+}
+
+.hero h1,
+.section-heading h2,
+.story__content h2,
+.footer-brand strong,
+.placeholder-card h1 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 400;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+}
+
+.hero h1 {
+  margin-top: 1rem;
+  font-size: clamp(2.9rem, 8vw, 5.1rem);
+  color: var(--color-gold-soft);
+}
+
+.hero p {
+  margin: 1.2rem 0 1.8rem;
+  color: rgba(241, 231, 214, 0.9);
+  font-size: 1.15rem;
+  line-height: 1.85;
+}
+
+.button-row {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 156px;
+  min-height: 50px;
+  padding: 0 1.35rem;
+  border-radius: 14px;
+  border: 1px solid transparent;
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+}
+
+.button:hover,
+.button:focus-visible {
+  transform: translateY(-2px);
+}
+
+.button--primary {
+  color: #27170e;
+  background: linear-gradient(135deg, #f4d79d, var(--color-gold));
+  box-shadow: 0 16px 34px rgba(200, 164, 106, 0.22);
+}
+
+.button--ghost {
+  border-color: rgba(200, 164, 106, 0.36);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.hero__features {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.9rem;
+  margin-top: 2rem;
+}
+
+.hero__feature {
+  padding: 1rem;
+  border-radius: 18px;
+  border: 1px solid rgba(200, 164, 106, 0.18);
+  background: rgba(18, 12, 9, 0.46);
+  text-align: center;
+}
+
+.hero__feature strong {
+  display: block;
+  color: var(--color-gold-soft);
+  margin-bottom: 0.35rem;
+}
+
+.hero__visual {
+  position: relative;
+}
+
+.hero__visual-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 28px;
+  min-height: 560px;
+  border: 1px solid rgba(200, 164, 106, 0.18);
+  background:
+    linear-gradient(140deg, rgba(24, 18, 12, 0.1), rgba(24, 18, 12, 0.75)),
+    url("../images/luxurious_arabian_oud_boutique_website_design.png") center top/cover no-repeat;
+  box-shadow: 0 32px 80px var(--color-shadow);
+}
+
+.hero__visual-badge {
+  position: absolute;
+  left: 1.4rem;
+  bottom: 1.4rem;
+  width: min(280px, calc(100% - 2.8rem));
+  padding: 1rem 1.1rem;
+  border-radius: 18px;
+  background: rgba(21, 16, 13, 0.84);
+  border: 1px solid rgba(200, 164, 106, 0.22);
+}
+
+.hero__visual-badge strong {
+  display: block;
+  margin-bottom: 0.35rem;
+  color: var(--color-gold-soft);
+}
+
+.section-shell {
+  padding: 2.75rem 0;
+  color: #20150f;
+}
+
+.section-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.35rem;
+}
+
+.section-heading h2 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  color: var(--color-coffee);
+}
+
+.section-link {
+  color: var(--color-coffee);
+  font-weight: 600;
+}
+
+.card-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.card-grid--categories {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.card-grid--products {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.category-card,
+.product-card,
+.story,
+.gift-banner,
+.placeholder-card {
+  border: 1px solid rgba(42, 26, 18, 0.08);
+  box-shadow: 0 18px 40px rgba(28, 18, 12, 0.08);
+}
+
+.category-card {
+  position: relative;
+  overflow: hidden;
+  min-height: 260px;
+  border-radius: 24px;
+  padding: 1.4rem;
+  color: var(--color-cream-strong);
+  background: linear-gradient(180deg, rgba(10, 6, 4, 0.15), rgba(10, 6, 4, 0.7));
+}
+
+.category-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+  transform: scale(1.02);
+}
+
+.category-card--oil::before {
+  background-image: url("../images/tajwri_altib_hero_banner.png");
+}
+
+.category-card--chips::before {
+  background-image: url("../images/luxurious_arabian_oud_boutique_website_design.png");
+}
+
+.category-card--bukhoor::before {
+  background-image: url("../images/tajwri_altib_logo_full_transparent.png"), linear-gradient(135deg, #1f2917, #342217);
+  background-size: 160px, cover;
+  background-repeat: no-repeat, no-repeat;
+  background-position: center 58%, center;
+}
+
+.category-card--gifts::before {
+  background-image: url("../images/tajwri_altib_icon_1024.png"), linear-gradient(135deg, #2c211a, #3f4a2b);
+  background-size: 138px, cover;
+  background-repeat: no-repeat, no-repeat;
+  background-position: center 52%, center;
+}
+
+.category-card__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  min-height: 100%;
+}
+
+.category-card h3,
+.product-card h3,
+.gift-banner h2 {
+  margin: 0 0 0.4rem;
+  font-family: var(--font-display);
+  font-weight: 400;
+}
+
+.category-card h3 {
+  font-size: 2rem;
+}
+
+.product-card {
+  overflow: hidden;
+  border-radius: 22px;
+  background: rgba(255, 252, 247, 0.92);
+}
+
+.product-card__visual {
+  aspect-ratio: 1 / 1;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.product-card:nth-child(1) .product-card__visual {
+  background-image: url("../images/tajwri_altib_hero_banner.png");
+}
+
+.product-card:nth-child(2) .product-card__visual {
+  background-image: url("../images/luxurious_arabian_oud_boutique_website_design.png");
+}
+
+.product-card:nth-child(3) .product-card__visual {
+  background-image: url("../images/tajwri_altib_logo_full_transparent.png"), linear-gradient(135deg, #faf5ed, #e8dbc4);
+  background-size: 150px, cover;
+}
+
+.product-card:nth-child(4) .product-card__visual {
+  background-image: url("../images/tajwri_altib_icon_1024.png"), linear-gradient(135deg, #f7efdf, #ddd0b8);
+  background-size: 140px, cover;
+}
+
+.product-card__body {
+  padding: 1rem 1rem 1.15rem;
+  color: var(--color-coffee);
+}
+
+.product-card__price {
+  margin: 0.55rem 0 0.9rem;
+  font-weight: 700;
+  color: var(--color-olive);
+}
+
+.product-card .button {
+  width: 100%;
+  min-height: 44px;
+  color: var(--color-cream-strong);
+  background: linear-gradient(135deg, #152414, #26351e);
+}
+
+.gift-banner {
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(260px, 0.75fr);
+  gap: 1.5rem;
+  margin-top: 2rem;
+  padding: 2rem;
+  border-radius: 28px;
+  color: var(--color-cream);
+  background:
+    linear-gradient(90deg, rgba(16, 25, 16, 0.9), rgba(39, 25, 16, 0.64)),
+    url("../images/tajwri_altib_hero_banner.png") center/cover no-repeat;
+}
+
+.gift-banner p {
+  max-width: 42ch;
+  line-height: 1.8;
+}
+
+.gift-banner__visual {
+  min-height: 240px;
+  border-radius: 22px;
+  background:
+    linear-gradient(180deg, rgba(13, 10, 8, 0.08), rgba(13, 10, 8, 0.32)),
+    url("../images/luxurious_arabian_oud_boutique_website_design.png") center/cover no-repeat;
+}
+
+.story {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.9fr) minmax(0, 1fr);
+  gap: 2rem;
+  padding: 1.2rem;
+  border-radius: 28px;
+  background: rgba(255, 252, 247, 0.92);
+}
+
+.story__visual {
+  min-height: 340px;
+  border-radius: 22px;
+  background:
+    linear-gradient(180deg, rgba(17, 11, 8, 0.1), rgba(17, 11, 8, 0.42)),
+    url("../images/luxurious_arabian_oud_boutique_website_design.png") center/cover no-repeat;
+}
+
+.story__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: var(--color-coffee);
+}
+
+.story__content h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+}
+
+.story__content p {
+  line-height: 1.9;
+}
+
+.story__stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.9rem;
+  margin-top: 1.5rem;
+}
+
+.story__stat {
+  padding: 1rem;
+  border-radius: 18px;
+  background: linear-gradient(180deg, rgba(241, 231, 214, 0.55), rgba(241, 231, 214, 0.92));
+  border: 1px solid rgba(42, 26, 18, 0.08);
+}
+
+.story__stat strong {
+  display: block;
+  margin-bottom: 0.25rem;
+  color: var(--color-olive);
+  font-size: 1.4rem;
+}
+
+.site-footer {
+  margin-top: 3rem;
+  padding: 3rem 0 1.3rem;
+  color: var(--color-cream);
+  background:
+    radial-gradient(circle at top left, rgba(200, 164, 106, 0.1), transparent 22%),
+    linear-gradient(180deg, #17100c 0%, #0f0a08 100%);
+}
+
+.site-footer__grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr 0.8fr 1fr;
+  gap: 1.5rem;
+}
+
+.footer-brand {
+  max-width: 350px;
+}
+
+.footer-brand__logo {
+  width: 82px;
+  margin-bottom: 0.9rem;
+}
+
+.footer-brand strong {
+  display: block;
+  margin-bottom: 0.45rem;
+  font-size: 2rem;
+  color: var(--color-gold-soft);
+}
+
+.footer-title {
+  margin: 0 0 0.9rem;
+  color: var(--color-gold-soft);
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 1.5rem;
+}
+
+.footer-links {
+  display: grid;
+  gap: 0.7rem;
+}
+
+.newsletter-form {
+  display: flex;
+  gap: 0.65rem;
+  margin-top: 1rem;
+}
+
+.newsletter-form input {
+  flex: 1;
+  min-height: 48px;
+  padding: 0 1rem;
+  border-radius: 14px;
+  border: 1px solid rgba(200, 164, 106, 0.22);
+  color: var(--color-cream);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.newsletter-form button {
+  min-width: 120px;
+  border: 0;
+  border-radius: 14px;
+  color: #291a10;
+  background: linear-gradient(135deg, #f5d593, #c8a46a);
+}
+
+.footer-bottom {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(200, 164, 106, 0.14);
+  color: rgba(241, 231, 214, 0.75);
+  text-align: center;
+}
+
+.placeholder-shell {
+  padding: 4rem 0 5rem;
+  color: #20150f;
+}
+
+.placeholder-card {
+  width: min(780px, 100%);
+  margin: 0 auto;
+  padding: 2rem;
+  border-radius: 28px;
+  background: rgba(255, 252, 247, 0.95);
+}
+
+.placeholder-card h1 {
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  color: var(--color-coffee);
+}
+
+.placeholder-card p {
+  line-height: 1.85;
+}
+
+.placeholder-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 500ms ease, transform 500ms ease;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 1024px) {
+  .hero__grid,
+  .story,
+  .gift-banner,
+  .site-footer__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card-grid--categories,
+  .card-grid--products {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 760px) {
+  .site-header__inner {
+    grid-template-columns: auto auto;
+    justify-content: space-between;
+  }
+
+  .menu-toggle {
+    display: inline-grid;
+  }
+
+  .site-nav {
+    display: none;
+    grid-column: 1 / -1;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.9rem;
+    padding-bottom: 1rem;
+  }
+
+  .site-header.is-open .site-nav {
+    display: flex;
+  }
+
+  .site-brand__text strong {
+    font-size: 1.35rem;
+  }
+
+  .hero {
+    padding-top: 2rem;
+  }
+
+  .hero__grid {
+    min-height: auto;
+  }
+
+  .hero__features,
+  .story__stats,
+  .card-grid--categories,
+  .card-grid--products {
+    grid-template-columns: 1fr;
+  }
+
+  .section-heading {
+    align-items: start;
+    flex-direction: column;
+  }
+
+  .newsletter-form {
+    flex-direction: column;
+  }
+}

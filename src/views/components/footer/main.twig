@@ -1,0 +1,44 @@
+<footer class="site-footer" id="contact">
+  <div class="container">
+    <div class="site-footer__grid">
+      <section class="footer-brand">
+        <img class="footer-brand__logo" src="{{ 'images/tajwri_altib_logo_transparent.png' | asset }}" alt="{{ trans('brand.name') }}">
+        <strong>{{ trans('brand.name') }}</strong>
+        <p>{{ trans('section.story_text') }}</p>
+      </section>
+
+      <section>
+        <h3 class="footer-title">{{ trans('footer.quick_links') }}</h3>
+        <div class="footer-links">
+          <a href="/">{{ trans('nav.home') }}</a>
+          <a href="#featured-categories">{{ trans('section.categories') }}</a>
+          <a href="#bestsellers">{{ trans('section.bestsellers') }}</a>
+          <a href="#about">{{ trans('section.story') }}</a>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="footer-title">{{ trans('footer.customer_service') }}</h3>
+        <div class="footer-links">
+          <a href="/page/contact-us">{{ trans('nav.contact') }}</a>
+          <a href="/page/shipping-policy">سياسة الشحن</a>
+          <a href="/page/privacy-policy">سياسة الخصوصية</a>
+          <a href="/page/returns-policy">الاستبدال والاسترجاع</a>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="footer-title">{{ trans('footer.newsletter') }}</h3>
+        <p>{{ trans('footer.newsletter_text') }}</p>
+        <form class="newsletter-form">
+          <input type="email" placeholder="{{ trans('footer.email_placeholder') }}" aria-label="{{ trans('footer.email_placeholder') }}">
+          <button type="submit">{{ trans('hero.cta') }}</button>
+        </form>
+      </section>
+    </div>
+
+    <div class="footer-bottom">
+      {{ trans('footer.rights') }} {{ "now" | date("Y") }} {{ trans('brand.name') }}
+    </div>
+  </div>
+</footer>

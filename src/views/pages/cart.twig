@@ -1,0 +1,18 @@
+{% extends 'layouts/master.twig' %}
+
+{% block page_title %}السلة | {{ trans('brand.name') }}{% endblock %}
+
+{% block content %}
+  <section class="placeholder-shell">
+    <div class="container">
+      <div class="placeholder-card">
+        <h1>السلة</h1>
+        <p>{{ trans('placeholder.body') }} يمكن هنا ربط مكونات سلة الحية الخاصة بعربة التسوق.</p>
+        <div class="placeholder-actions">
+          <a class="button button--primary" href="/">{{ trans('nav.home') }}</a>
+          <a class="button button--ghost" href="/products">{{ trans('cta.view_all') }}</a>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}

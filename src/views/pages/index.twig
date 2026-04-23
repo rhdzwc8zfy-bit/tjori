@@ -1,0 +1,163 @@
+{% extends 'layouts/master.twig' %}
+
+{% block page_title %}{{ trans('brand.name') }} | {{ trans('hero.title') }}{% endblock %}
+
+{% block content %}
+  <section class="hero">
+    <div class="container hero__grid">
+      <div class="hero__content reveal">
+        <span class="eyebrow">{{ trans('brand.tagline') }}</span>
+        <h1>{{ trans('hero.title') }}</h1>
+        <p>{{ trans('hero.subtitle') }}</p>
+        <div class="button-row">
+          <a class="button button--primary" href="#bestsellers">{{ trans('hero.cta') }}</a>
+          <a class="button button--ghost" href="#gifts">{{ trans('hero.secondary') }}</a>
+        </div>
+
+        <div class="hero__features">
+          <div class="hero__feature">
+            <strong>{{ trans('usp.quality') }}</strong>
+            <span>منتجات مختارة بعناية</span>
+          </div>
+          <div class="hero__feature">
+            <strong>{{ trans('usp.delivery') }}</strong>
+            <span>تجهيز وشحن داخل المملكة</span>
+          </div>
+          <div class="hero__feature">
+            <strong>{{ trans('usp.packaging') }}</strong>
+            <span>تجربة هدايا أنيقة</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero__visual reveal">
+        <div class="hero__visual-card"></div>
+        <div class="hero__visual-badge">
+          <strong>{{ trans('section.gifts') }}</strong>
+          <span>{{ trans('section.gifts_text') }}</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-shell" id="featured-categories">
+    <div class="container">
+      <div class="section-heading reveal">
+        <h2>{{ trans('section.categories') }}</h2>
+        <a class="section-link" href="#bestsellers">{{ trans('cta.view_all') }}</a>
+      </div>
+
+      <div class="card-grid card-grid--categories">
+        <article class="category-card category-card--oil reveal">
+          <div class="category-card__content">
+            <h3>دهن العود</h3>
+            <span>روائح مركزة تدوم</span>
+          </div>
+        </article>
+        <article class="category-card category-card--chips reveal">
+          <div class="category-card__content">
+            <h3>العود</h3>
+            <span>قطع طبيعية مختارة</span>
+          </div>
+        </article>
+        <article class="category-card category-card--bukhoor reveal">
+          <div class="category-card__content">
+            <h3>البخور</h3>
+            <span>خلطات تملأ المكان حضوراً</span>
+          </div>
+        </article>
+        <article class="category-card category-card--gifts reveal">
+          <div class="category-card__content">
+            <h3>الهدايا</h3>
+            <span>تغليف فاخر ومناسبات خاصة</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-shell" id="bestsellers">
+    <div class="container">
+      <div class="section-heading reveal">
+        <h2>{{ trans('section.bestsellers') }}</h2>
+        <a class="section-link" href="/products">{{ trans('cta.view_all') }}</a>
+      </div>
+
+      <div class="card-grid card-grid--products">
+        <article class="product-card reveal">
+          <div class="product-card__visual"></div>
+          <div class="product-card__body">
+            <h3>{{ trans('card.oud_oil') }}</h3>
+            <p class="product-card__price">{{ trans('card.price_from') }} 349 ر.س</p>
+            <a class="button" href="/cart">{{ trans('cta.add_to_cart') }}</a>
+          </div>
+        </article>
+
+        <article class="product-card reveal">
+          <div class="product-card__visual"></div>
+          <div class="product-card__body">
+            <h3>{{ trans('card.oud_chips') }}</h3>
+            <p class="product-card__price">{{ trans('card.price_from') }} 560 ر.س</p>
+            <a class="button" href="/cart">{{ trans('cta.add_to_cart') }}</a>
+          </div>
+        </article>
+
+        <article class="product-card reveal">
+          <div class="product-card__visual"></div>
+          <div class="product-card__body">
+            <h3>{{ trans('card.bukhoor') }}</h3>
+            <p class="product-card__price">{{ trans('card.price_from') }} 195 ر.س</p>
+            <a class="button" href="/cart">{{ trans('cta.add_to_cart') }}</a>
+          </div>
+        </article>
+
+        <article class="product-card reveal">
+          <div class="product-card__visual"></div>
+          <div class="product-card__body">
+            <h3>{{ trans('card.mabkhara') }}</h3>
+            <p class="product-card__price">{{ trans('card.price_from') }} 285 ر.س</p>
+            <a class="button" href="/cart">{{ trans('cta.add_to_cart') }}</a>
+          </div>
+        </article>
+      </div>
+
+      <div class="gift-banner reveal" id="gifts">
+        <div>
+          <h2>{{ trans('section.gifts') }}</h2>
+          <p>{{ trans('section.gifts_text') }}</p>
+          <a class="button button--primary" href="/page/gifts">{{ trans('hero.secondary') }}</a>
+        </div>
+        <div class="gift-banner__visual"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-shell" id="about">
+    <div class="container">
+      <article class="story reveal">
+        <div class="story__visual"></div>
+        <div class="story__content">
+          <h2>{{ trans('section.story') }}</h2>
+          <p>{{ trans('section.story_text') }}</p>
+          <div class="placeholder-actions">
+            <a class="button button--primary" href="/page/about-us">{{ trans('cta.learn_more') }}</a>
+          </div>
+          <div class="story__stats">
+            <div class="story__stat">
+              <strong>100%</strong>
+              <span>مواد طبيعية عالية الجودة</span>
+            </div>
+            <div class="story__stat">
+              <strong>24h</strong>
+              <span>تجهيز سريع للطلبات</span>
+            </div>
+            <div class="story__stat">
+              <strong>RTL</strong>
+              <span>واجهة عربية مصممة للعلامة</span>
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+{% endblock %}

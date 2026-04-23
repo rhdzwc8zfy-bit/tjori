@@ -1,0 +1,17 @@
+{% extends 'layouts/master.twig' %}
+
+{% block page_title %}شكراً لك | {{ trans('brand.name') }}{% endblock %}
+
+{% block content %}
+  <section class="placeholder-shell">
+    <div class="container">
+      <div class="placeholder-card">
+        <h1>شكراً لإتمام الطلب</h1>
+        <p>يمكن تخصيص صفحة الشكر لتأكيد تفاصيل الطلب، واقتراح منتجات مشابهة، وتعزيز تجربة ما بعد الشراء.</p>
+        <div class="placeholder-actions">
+          <a class="button button--primary" href="/">{{ trans('nav.home') }}</a>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'layouts/master.twig' %}
+
+{% block page_title %}صفحة داخلية | {{ trans('brand.name') }}{% endblock %}
+
+{% block content %}
+  <section class="placeholder-shell">
+    <div class="container">
+      <div class="placeholder-card">
+        <h1>{{ trans('placeholder.title') }}</h1>
+        <p>{{ trans('placeholder.body') }}</p>
+        <div class="placeholder-actions">
+          <a class="button button--primary" href="/">{{ trans('nav.home') }}</a>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}

@@ -1,0 +1,47 @@
+{
+  "version": "1.0.0",
+  "theme_name": "Tajwri Altib",
+  "repo_url": "https://github.com/rhdzwc8zfy-bit/tjori.git",
+  "support_url": "https://wa.me/966543012121",
+  "settings": [
+    {
+      "type": "string",
+      "id": "placeholder",
+      "format": "hidden",
+      "value": "images/tajwri_altib_icon_1024.png"
+    },
+    {
+      "type": "boolean",
+      "id": "show_free_shipping_bar",
+      "label": "إظهار شريط الشحن المجاني",
+      "format": "switch",
+      "selected": true
+    },
+    {
+      "type": "string",
+      "id": "announcement_text",
+      "label": "نص الشريط العلوي",
+      "value": "شحن مجاني للطلبات التي تزيد عن 499 ر.س"
+    },
+    {
+      "type": "string",
+      "id": "whatsapp_number",
+      "label": "رقم واتساب",
+      "value": "+966543012121"
+    },
+    {
+      "type": "string",
+      "id": "support_email",
+      "label": "البريد الإلكتروني",
+      "value": "wowftw29@gmail.com"
+    },
+    {
+      "type": "string",
+      "id": "instagram_url",
+      "label": "رابط إنستغرام",
+      "value": "https://instagram.com/"
+    }
+  ],
+  "features": [],
+  "components": []
+}

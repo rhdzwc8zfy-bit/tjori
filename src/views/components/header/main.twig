@@ -1,0 +1,33 @@
+<div class="announcement-bar">
+  <div class="container announcement-bar__inner">
+    <span>{{ trans('announcement.free_shipping') }}</span>
+  </div>
+</div>
+
+<header class="site-header" data-site-header>
+  <div class="container site-header__inner">
+    <a class="site-brand" href="/">
+      <img class="site-brand__logo" src="{{ 'images/tajwri_altib_logo_transparent.png' | asset }}" alt="{{ trans('brand.name') }}">
+      <span class="site-brand__text">
+        <strong>{{ trans('brand.name') }}</strong>
+        <span>{{ trans('brand.tagline') }}</span>
+      </span>
+    </a>
+
+    <nav class="site-nav" aria-label="Primary">
+      <a href="/">{{ trans('nav.home') }}</a>
+      <a href="#featured-categories">{{ trans('nav.oud') }}</a>
+      <a href="#featured-categories">{{ trans('nav.bukhoor') }}</a>
+      <a href="#bestsellers">{{ trans('nav.incense') }}</a>
+      <a href="#gifts">{{ trans('nav.gifts') }}</a>
+      <a href="#about">{{ trans('nav.about') }}</a>
+      <a href="#contact">{{ trans('nav.contact') }}</a>
+    </nav>
+
+    <div class="site-header__actions">
+      <a class="icon-link" href="/search" aria-label="Search">بحث</a>
+      <a class="icon-link" href="/cart" aria-label="Cart">سلة</a>
+      <button class="menu-toggle" type="button" data-menu-toggle aria-label="Menu">☰</button>
+    </div>
+  </div>
+</header>

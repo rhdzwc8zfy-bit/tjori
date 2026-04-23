@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block page_title %}{{ trans('brand.name') }}{% endblock %}</title>
+    <meta name="description" content="{{ trans('hero.subtitle') }}">
+    <link rel="stylesheet" href="{{ 'styles/app.css' | asset }}">
+  </head>
+  <body>
+    {% include 'components/header/main.twig' %}
+    <main>
+      {% block content %}{% endblock %}
+    </main>
+    {% include 'components/footer/main.twig' %}
+    <script src="{{ 'js/app.js' | asset }}"></script>
+  </body>
+</html>
