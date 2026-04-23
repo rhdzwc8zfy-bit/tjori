@@ -1,6 +1,6 @@
-# Tajwri Altib Salla Theme
+# Tojri Al-Teeb Salla Theme
 
-Luxury Arabic-RTL starter theme for Salla, built around the provided Tajwri Altib brand assets.
+Luxury Arabic-RTL starter theme for Salla, built around the provided Tojri Al-Teeb brand assets.
 
 ## Included
 
