@@ -1,8 +1,11 @@
 {
-  "version": "1.0.0",
-  "theme_name": "Tajwri Altib",
-  "repo_url": "https://github.com/rhdzwc8zfy-bit/tjori-alteeb",
-  "support_url": "https://wa.me/966543012121",
+  "name": {
+    "ar": "تجوري الطيب",
+    "en": "Tajwri Altib"
+  },
+  "repository": "https://github.com/rhdzwc8zfy-bit/tjori-alteeb",
+  "author_email": "wowftw29@gmail.com",
+  "features": [],
   "settings": [
     {
       "type": "string",
@@ -15,33 +18,44 @@
       "id": "show_free_shipping_bar",
       "label": "إظهار شريط الشحن المجاني",
       "format": "switch",
+      "value": true,
       "selected": true
     },
     {
       "type": "string",
       "id": "announcement_text",
       "label": "نص الشريط العلوي",
+      "format": "text",
       "value": "شحن مجاني للطلبات التي تزيد عن 499 ر.س"
     },
     {
       "type": "string",
       "id": "whatsapp_number",
       "label": "رقم واتساب",
+      "format": "text",
       "value": "+966543012121"
+    },
+    {
+      "type": "string",
+      "id": "support_url",
+      "label": "رابط الدعم",
+      "format": "text",
+      "value": "https://wa.me/966543012121"
     },
     {
       "type": "string",
       "id": "support_email",
       "label": "البريد الإلكتروني",
+      "format": "text",
       "value": "wowftw29@gmail.com"
     },
     {
       "type": "string",
       "id": "instagram_url",
       "label": "رابط إنستغرام",
+      "format": "text",
       "value": "https://instagram.com/"
     }
   ],
-  "features": [],
   "components": []
 }
