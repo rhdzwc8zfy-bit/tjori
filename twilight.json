@@ -1,16 +1,8 @@
 {
-  "name": {
-    "ar": "تجوري الطيب",
-    "en": "Tojri Al-Teeb"
-  },
-  "repository": "https://github.com/rhdzwc8zfy-bit/tjori",
-  "author_email": "wowftw29@gmail.com",
-  "features": [
-    "fonts",
-    "color",
-    "breadcrumb",
-    "filters"
-  ],
+  "version": "1.0.0",
+  "theme_name": "Tojri Al-Teeb",
+  "repo_url": "https://github.com/rhdzwc8zfy-bit/tjori",
+  "support_url": "https://wa.me/966543012121",
   "settings": [
     {
       "type": "string",
@@ -19,5 +11,6 @@
       "value": "images/tajwri_altib_icon_1024.png"
     }
   ],
+  "features": [],
   "components": []
 }
